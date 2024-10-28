@@ -1,0 +1,237 @@
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+header {
+    background-color: #0e59d0; /* Primary color */
+    color: white;
+    padding: 0.5em;
+    border: 1em solid #0e59d0; /* Primary color */
+    border-radius: 1em;
+    justify-content: center;
+    display: flex;
+    margin: 1em;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #0e59d0; /* Primary color */
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1em;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.navButtons {
+    background-color: #ffeb3b; /* Accent color */
+    color: #333;
+    padding: 1em 2em;
+    border: 2px solid #ffeb3b; /* Accent color */
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    outline: none;
+}
+
+.navButtons:hover {
+    background-color: #4caf50; /* Secondary color */
+    color: white;
+    transform: translateY(-2px);
+}
+
+main {
+    padding: 1em;
+    background-color: #e6f3ff; /* Light shade of primary color */
+    border: 1em solid #e6f3ff;
+    border-radius: 1em;
+    margin: 1em;
+    padding-bottom: 70px;
+}
+
+main div {
+    justify-content: center;
+    display: flex;
+    padding: 1em;
+    margin-bottom: 1em;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+#getPosts,
+#refresh {
+    background-color: #ffeb3b; /* Accent color */
+    color: #333;
+    padding: 1em 2em;
+    border: 2px solid #ffeb3b; /* Accent color */
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    outline: none;
+}
+
+#getPosts:hover,
+#refresh:hover {
+    background-color: #4caf50; /* Secondary color */
+    color: white;
+    transform: translateY(-2px);
+}
+
+#output {
+    padding: 1em;
+    border-radius: 8px;
+    width: calc(100% - 2em);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+}
+
+.posts {
+    padding: 1em;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 1em;
+    flex: 1 1 calc(30% - 2em);
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.posts h2,
+.posts p {
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+}
+
+.posts button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#deleteIcon {
+    background-color: #ff5252; /* Red for delete actions */
+    border: none;
+    cursor: pointer;
+}
+
+#likeToggleIcon {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#restoreIcon {
+    background-color: #4caf50; /* Secondary color for restore actions */
+    border: none;
+    cursor: pointer;
+}
+
+.icons {
+    height: 20px;
+    width: 20px;
+}
+
+/* Modal Styling */
+#confirmButtons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin: 1em;
+}
+
+:modal {
+    background-color: #e6f3ff; /* Light primary color */
+    border: 2px solid #0e59d0; /* Primary color */
+    border-radius: 10px;
+    padding: 1em;
+    width: 50%;
+}
+
+dialog p {
+    color: black;
+    font-size: larger;
+}
+
+#cancelDelete,
+#confirmDelete {
+    padding: 1em 2em;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    outline: none;
+}
+
+#cancelDelete {
+    background-color: #ffeb3b; /* Accent color */
+    color: #333;
+    border: 2px solid #ffeb3b;
+}
+
+#cancelDelete:hover {
+    background-color: #ffe927; /* Slightly darker shade */
+    color: black;
+    transform: translateY(-2px);
+}
+
+#confirmDelete {
+    background-color: #ff5252; /* Red for delete */
+    color: white;
+    border: 2px solid #ff5252;
+}
+
+#confirmDelete:hover {
+    background-color: #ff0000;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav, #confirmButtons {
+        flex-direction: column;
+    }
+
+    .posts {
+        flex: 1 1 100%; /* Full-width on smaller screens */
+        min-width: 100%;
+    }
+
+    .navButtons,
+    #getPosts,
+    #refresh,
+    #cancelDelete,
+    #confirmDelete {
+        width: 100%;
+        padding: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    header, nav, main, .posts {
+        margin: 0.5em;
+        padding: 0.5em;
+    }
+
+    .navButtons,
+    #getPosts,
+    #refresh,
+    #cancelDelete,
+    #confirmDelete {
+        font-size: 1em;
+    }
+}

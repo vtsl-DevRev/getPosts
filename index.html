@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get-Posts</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Get Posts</h1>
+    </header>
+    <nav>
+        <button id="home" class="navButtons">Home</button>
+        <button id="recentlyDeleted" class="navButtons">RecentlyDeleted</button>
+        <button id="liked" class="navButtons">Liked</button>
+    </nav>
+    <main>
+        <div id="output"></div>
+        <div id="buttons">
+            <button id="getPosts">Get Posts</button>
+            <button id="refresh">Refresh</button>
+        </div>
+    </main>
+    <dialog id="modalDialog">
+        <form method="dialog">
+            <p>Do you want to permenantly delete the <strong id="listName">Current</strong> Post</p>
+            <div id="confirmButtons">
+                <button id="confirmDelete">Delete</button>
+                <button id="cancelDelete">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+
+</html>
+<script src="script.js"></script>
