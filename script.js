@@ -43,7 +43,7 @@ var homeButton = document.getElementById('home');
 var recentlyDeletedButton = document.getElementById('recentlyDeleted');
 var likedButton = document.getElementById('liked');
 var posts = JSON.parse(localStorage.getItem("posts") || '[]');
-var index = 1;
+var index = JSON.parse(localStorage.getItem("index") || '1');
 getButton.addEventListener('click', function () { return __awaiter(_this, void 0, void 0, function () {
     var response, data, postData, finalText, error_1;
     return __generator(this, function (_a) {
@@ -69,6 +69,7 @@ getButton.addEventListener('click', function () { return __awaiter(_this, void 0
                     localStorage.setItem("posts", JSON.stringify(posts));
                     appendRecentlyFetchedPost(postData);
                     index++;
+                    localStorage.setItem("index", JSON.stringify(index));
                 }
                 else {
                     finalText = document.createElement('h2');
@@ -236,5 +237,6 @@ refreshButton.addEventListener('click', function () {
     output.innerHTML = '';
     index = 1;
     posts = [];
+    localStorage.setItem("index", JSON.stringify(index));
     localStorage.setItem("posts", JSON.stringify(posts));
 });

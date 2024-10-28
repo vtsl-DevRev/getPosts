@@ -17,7 +17,7 @@ interface Post {
 }
 
 let posts: Post[] = JSON.parse(localStorage.getItem("posts") || '[]');
-let index: number = 1;
+let index: number = JSON.parse(localStorage.getItem("index") || '1');
 
 getButton.addEventListener('click', async () => {
     try {
@@ -36,6 +36,7 @@ getButton.addEventListener('click', async () => {
             localStorage.setItem("posts", JSON.stringify(posts));
             appendRecentlyFetchedPost(postData);
             index++;
+            localStorage.setItem("index", JSON.stringify(index));
         } else {
             const finalText = document.createElement('h2');
             finalText.className = 'finalText';
@@ -248,5 +249,6 @@ refreshButton.addEventListener('click', () => {
     output.innerHTML = '';
     index = 1;
     posts = [];
+    localStorage.setItem("index", JSON.stringify(index));
     localStorage.setItem("posts", JSON.stringify(posts));
 });
